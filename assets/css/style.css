@@ -1,1 +1,9 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body #btn {
+  align-self: auto;
+}/*# sourceMappingURL=style.css.map */
