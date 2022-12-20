@@ -6,6 +6,9 @@ function newQuote() {
     fetch(api)
       .then((response) => response.json())
       .then((data) => {
+        const divContent = document.createElement('div');
+        divContent.classList.add('content');
+        
         const blockquote = document.createElement('blockquote');
         blockquote.textContent = data.quote
 
@@ -13,24 +16,23 @@ function newQuote() {
         divAutor.textContent = data.author;
 
         const pPerma = document.createElement('a');
-        const linkText = document.createTextNode("Lien vers la citation.")
+        const linkText = document.createTextNode("Link to the quote.")
         pPerma.appendChild(linkText);
-        pPerma.title = "Lien vers la citation.";
+        pPerma.title = "Link to the quote.";
         pPerma.href = data.permalink;
         
         const imgPhoto = document.createElement('img');
         imgPhoto.src = data.photo;
+        imgPhoto.setAttribute('alt', "Image corresponding to the quote.")
 
-        const divContent = document.getElementById('content');  
-        
-        const divTout = document.getElementById('tout');
+        const divTout = document.getElementsByClassName('tout');
 
         console.log(data);
         divContent.appendChild(imgPhoto);
         divContent.appendChild(blockquote);
         divContent.appendChild(divAutor);
         divContent.appendChild(pPerma);
-        divTout.appendChild(divContent)
+        divTout[0].appendChild(divContent);
       })
       .catch((error) => {
         console.log("There was an error!", error);

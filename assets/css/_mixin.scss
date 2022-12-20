@@ -1,0 +1,5 @@
+@mixin desktop_xl {
+    @media screen and (min-width: 1280px) {
+        @content
+    }
+};
