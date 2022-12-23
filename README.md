@@ -1,7 +1,5 @@
 # random-quote-using-async-await
 
-In this repository, I experimented with forms in Javascript through several exercises.
-
 ![](./assets/img/readme.png)
 
 ---
